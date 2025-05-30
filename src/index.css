@@ -19,6 +19,9 @@
   /* Shadow */
   --shadow-background: 0 -0.4rem 0.8rem -0.6rem var(--color-gray);
   --shadow-input: 0 0 0.4rem 0 var(--color-gray);
+
+  /* Media */
+  --breakpoint-xs: 500px;
 }
 
 :root {
