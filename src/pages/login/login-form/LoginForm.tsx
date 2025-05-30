@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import PasswordInput from '../../../components/password-input/PasswordInput';
 import Input from '@/components/ui/input';
 import LoginError from '../LoginError';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
   const {
@@ -16,9 +17,11 @@ export default function LoginForm() {
   } = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
   });
+  const navigate = useNavigate();
 
   function onValidSumbit(data: LoginFormValues) {
     console.log('Submitting:', data);
+    navigate('/');
   }
 
   return (
