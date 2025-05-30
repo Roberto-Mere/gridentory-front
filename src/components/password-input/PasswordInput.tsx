@@ -4,7 +4,7 @@ import EyeShown from '../../assets/svg/eye-shown.svg?react';
 import Button from '@/components/ui/button';
 import Input from '@/components/ui/input';
 
-export default function PasswordInput() {
+export default function PasswordInput({ ...inputProps }) {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -17,6 +17,7 @@ export default function PasswordInput() {
         placeholder="Password"
         variant="login"
         className="w-full rounded-b-md"
+        {...inputProps}
         type={isShown ? 'text' : 'password'}
       />
       <Button
