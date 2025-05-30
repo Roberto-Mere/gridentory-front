@@ -28,7 +28,12 @@ export default function LoginForm() {
       aria-label="login"
       noValidate
     >
-      {errors.login?.message && <LoginError message={errors.login.message} />}
+      {(errors.login?.message && (
+        <LoginError message={errors.login.message} />
+      )) ||
+        (errors.email?.message && (
+          <LoginError message={errors.email.message} />
+        ))}
 
       <div>
         <label htmlFor="email" className="hidden"></label>
