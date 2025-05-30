@@ -27,4 +27,26 @@ describe('Login form', () => {
       'Please enter valid credentials',
     );
   });
+
+  it('should display an error message when the email is invalid', async () => {
+    const user = userEvent.setup();
+    render(<LoginForm />);
+    const loginForm = screen.getByRole('form');
+    const submitButton = screen.getByRole('button', { name: /sign in/i });
+    const emailInput = screen.getByRole('textbox');
+    const passwordInput = screen.getByLabelText(/password/i);
+
+    expect(loginForm).not.toContainElement(
+      screen.queryByTestId(/login-error/i),
+    );
+
+    await user.type(emailInput, 'email');
+    await user.type(passwordInput, 'password');
+    await user.click(submitButton);
+
+    expect(loginForm).toContainElement(screen.getByTestId(/login-error/i));
+    expect(screen.queryByTestId(/login-error/i)).toHaveTextContent(
+      'Please enter a valid email',
+    );
+  });
 });
