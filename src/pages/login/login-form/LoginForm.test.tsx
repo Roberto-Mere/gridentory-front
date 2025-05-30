@@ -1,0 +1,30 @@
+import { describe, expect, it, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import LoginForm from './LoginForm';
+
+vi.mock('../LoginError.tsx', () => ({
+  default: ({ message }: { message: string }) => (
+    <p data-testid="login-error">{message}</p>
+  ),
+}));
+
+describe('Login form', () => {
+  it('should display an error message when no inputs are given', async () => {
+    const user = userEvent.setup();
+    render(<LoginForm />);
+    const loginForm = screen.getByRole('form');
+    const submitButton = screen.getByRole('button', { name: /sign in/i });
+
+    expect(loginForm).not.toContainElement(
+      screen.queryByTestId(/login-error/i),
+    );
+
+    await user.click(submitButton);
+
+    expect(loginForm).toContainElement(screen.getByTestId(/login-error/i));
+    expect(screen.queryByTestId(/login-error/i)).toHaveTextContent(
+      'Please enter valid credentials',
+    );
+  });
+});
