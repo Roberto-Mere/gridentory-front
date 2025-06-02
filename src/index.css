@@ -10,7 +10,8 @@
 
   /* Colours */
   --color-black: #4a4a4a;
-  --color-gray: #4a4a4a80;
+  --color-dark-gray: #595959;
+  --color-gray: #7a7a7a;
   --color-light-gray: #f7f7f7;
   --color-highlights: #ffc102;
   --color-dark-highlights: #e7ae00;

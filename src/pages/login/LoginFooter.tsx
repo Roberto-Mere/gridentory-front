@@ -10,7 +10,7 @@ export default function LoginFooter() {
           <GridLogo />
           <p className="text-lg">Grid Dynamics</p>
         </div>
-        <p className="text-gray text-lg">
+        <p className="text-dark-gray text-lg">
           Grid Dynamics© 2006-{new Date().getFullYear()}
         </p>
       </section>
