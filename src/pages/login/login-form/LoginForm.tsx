@@ -8,6 +8,7 @@ import PasswordInput from '../../../components/password-input/PasswordInput';
 import Input from '@/components/ui/input';
 import LoginError from '../LoginError';
 import { useNavigate } from 'react-router-dom';
+import Button from '@/components/ui/button';
 
 export default function LoginForm() {
   const {
@@ -26,7 +27,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="relative mt-auto"
+      className="relative mt-56"
       onSubmit={handleSubmit(onValidSumbit)}
       aria-label="login"
       noValidate
@@ -50,12 +51,9 @@ export default function LoginForm() {
         />
       </div>
       <PasswordInput {...register('password')} />
-      <button
-        type="submit"
-        className="bg-highlights hover:bg-dark-highlights mt-32 w-full cursor-pointer rounded p-12 text-lg font-bold text-white"
-      >
+      <Button type="submit" className="mt-32 w-full text-lg">
         Sign in
-      </button>
+      </Button>
     </form>
   );
 }
