@@ -6,7 +6,7 @@ export default function LoginHeader() {
       <div className="my-32 flex max-w-[27rem] flex-col items-center">
         <LoginIcon width={128} height={128} className="mb-40" />
         <h1 className="mb-16 text-xl">Welcome to Grid Dynamics</h1>
-        <h2 className="text-dark-gray text-center text-lg">
+        <h2 className="text-dark-gray text-center text-base">
           Please sign in to your account to start using the application
         </h2>
       </div>

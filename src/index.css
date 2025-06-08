@@ -5,7 +5,8 @@
   --spacing: 1px;
 
   /* Font Size */
-  --text-lg: 1.6rem;
+  --text-base: 1.6rem;
+  --text-lg: 1.8rem;
   --text-xl: 2.2rem;
 
   /* Colours */
