@@ -26,7 +26,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="relative mt-60"
+      className="relative mt-auto"
       onSubmit={handleSubmit(onValidSumbit)}
       aria-label="login"
       noValidate
